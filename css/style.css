@@ -16,13 +16,18 @@ body {
 }
 
 header {
-  height: 60px;
+  height: 80px;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .logo img {
   width: 50%;
 }
@@ -43,7 +48,7 @@ header {
 
 .section-description {
   background-color: #f2f2f2;
-  height: 260px;
+  height: 340px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -77,8 +82,8 @@ header {
 }
 .section-explication__items {
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
 }
 .section-explication__item {
   display: flex;
@@ -91,11 +96,11 @@ header {
   position: relative;
   background-color: #f2f2f2;
   height: 60px;
-  width: 33%;
+  width: 30%;
   cursor: pointer;
 }
 .section-explication__item:hover {
-  background-color: rgba(147, 86, 220, 0.15);
+  background-color: rgba(147, 86, 220, 0.2);
 }
 .section-explication__item .fa-mobile-alt, .section-explication__item .fa-bars, .section-explication__item .fa-store {
   margin-left: 30px;
@@ -160,17 +165,32 @@ header {
   padding: 10px 20px;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .restaurant__item-description .title {
   font-weight: 600;
   font-size: 1.1rem;
 }
-.restaurant__item-description .fa-heart {
+.restaurant__item-description .fas.fa-heart {
   font-size: 1.5rem;
-  color: black;
+  background: -webkit-linear-gradient(bottom, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 22px;
+  opacity: 0;
 }
-.restaurant__item-description .fa-heart:hover {
-  color: #9356dc;
+.restaurant__item-description .fas.fa-heart:hover {
+  opacity: 1;
+}
+.restaurant__item-description .far.fa-heart {
+  font-size: 1.5rem;
+  opacity: 1;
+}
+.restaurant__item-description .far.fa-heart:hover {
+  opacity: 0;
 }
 .restaurant__item-new {
   background-color: #99e2d0;
@@ -183,7 +203,48 @@ header {
   border-radius: 2px;
 }
 
+footer {
+  background-color: #393939;
+  padding: 40px 5%;
+  color: white;
+}
+
+.svg {
+  filter: invert(100%) sepia(0%) saturate(7462%) hue-rotate(337deg) brightness(111%) contrast(107%);
+}
+
+.row {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.row i {
+  margin-right: 20px;
+}
+.row .fa-hands-helping {
+  margin-right: 13px;
+}
+.row p {
+  cursor: pointer;
+}
+
+.legal {
+  cursor: pointer;
+}
+
+.contact {
+  color: white;
+  margin-top: 10px;
+  display: block;
+}
+
 @media screen and (max-width: 600px) {
+  .section-explication__items {
+    flex-direction: column;
+  }
+
   .section-explication__item {
     width: 100%;
   }
