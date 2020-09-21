@@ -1,0 +1,11 @@
+{
+  "name": "ohmyfoodnew",
+  "version": "1.0.0",
+  "description": "projet 3 ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "author": "morgan massamba",
+  "license": "ISC"
+}

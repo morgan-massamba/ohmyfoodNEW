@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/*font-family: 'Shrikhand', cursive;*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+/*font-family: 'Roboto', sans-serif;*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+header {
+  height: 60px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 50%;
+}
+
+.section-map {
+  background-color: #d2d2d2;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+}
+.section-map p {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  margin-left: 10px;
+}
+
+.section-description {
+  background-color: #f2f2f2;
+  height: 260px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 0 35px;
+}
+.section-description .description-title {
+  font-size: 1.5rem;
+}
+.section-description p {
+  font-size: 1.1rem;
+}
+.section-description .btn {
+  background: linear-gradient(to left top, #9356dc, #ff79da);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.section-explication {
+  padding: 0 5%;
+}
+.section-explication .explication-title {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.section-explication__items {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.section-explication__item {
+  display: flex;
+  margin-bottom: 20px;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  background-color: #f2f2f2;
+  height: 60px;
+  width: 33%;
+  cursor: pointer;
+}
+.section-explication__item:hover {
+  background-color: rgba(147, 86, 220, 0.15);
+}
+.section-explication__item .fa-mobile-alt, .section-explication__item .fa-bars, .section-explication__item .fa-store {
+  margin-left: 30px;
+  margin-right: 30px;
+  color: grey;
+}
+.section-explication__item .fa-store {
+  color: #9356dc;
+}
+.section-explication__item .fa-circle {
+  position: absolute;
+  font-size: 1.3rem;
+  left: -11px;
+  color: #9356dc;
+}
+.section-explication__item .numero {
+  position: absolute;
+  left: -5px;
+  color: white;
+}
+.section-explication__item p {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+  .section-explication__item {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
