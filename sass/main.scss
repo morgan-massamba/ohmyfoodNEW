@@ -30,6 +30,7 @@ header{
     text-align: center;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .logo{
@@ -266,4 +267,179 @@ footer{
     .restaurant__item-image img{
         height: 240px;
     }
+}
+
+//PARTIE MENU 
+.fleche{
+    color: black;
+    font-size: 1.4rem;
+    position: absolute;
+    left: 5%;
+}
+.image-fond{
+    background-image: url("../images/restaurants/the_full_palette.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.menu-container{
+    background-color: #f2f2f2;
+    width: 100%;
+    padding:5%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-top: -50px;
+}
+
+.ligne{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    .heading{
+        font-size: 1.8rem;
+        font-family: 'Shrikhand', cursive;
+    }
+    .fa-heart{
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
+.entree{
+    font-size: 1.3rem;
+    font-weight: 400;
+    display: inline-block;
+    &:after{
+        content: " ";
+        display: block;
+        width: 50%;
+        height: 4px;
+        background-color: $vert;
+    }
+}
+
+.menu-items{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.menu-item{
+    margin-top: 15px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.2);
+    overflow: hidden;
+    background-color: white;
+    cursor: pointer;
+    &:hover .menu-item__animation {
+        animation: largeur 1s ease forwards;
+    }
+    &:hover .menu-item__animation i{
+        animation: rotate 1s ease forwards;
+        opacity: 1; 
+    }
+    &__plat{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 85%;
+        padding: 10px;
+        p{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        }
+
+        .principal{
+        font-weight: 700;
+        }
+    }
+    &__prix{
+        font-weight: 500;
+        padding: 10px 20px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        width: 15%;
+    }
+    &__animation{
+        background-color: $vert;
+        height: 100%;
+        border-radius: 0 15px 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        width: 0%;
+        i{
+            opacity: 0;
+            color: white;
+        }
+       
+    }
+}
+
+@keyframes rotate{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg) ;
+    }
+}
+@keyframes largeur{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 20%;
+    }
+}
+
+//animation pour les items les faire apparaitre en delay 
+@keyframes apparition{
+    from{
+        opacity: 0;
+        transform: translateY(30%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+.menu-item:nth-child(1){
+    animation: apparition 1s ease both;
+    animation-delay: 0.2s;
+}
+.menu-item:nth-child(2){
+    animation: apparition 1s ease both;
+    animation-delay: 0.4s;
+}
+.menu-item:nth-child(3){
+    animation: apparition 1s ease both;
+    animation-delay: 0.6s;
+}
+.btn-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-order{
+    background: linear-gradient(to left top, $violet, $rose);
+    padding: 15px 60px;
+    border-radius: 20px;
+    border:none;
+    color: white;
+    font-size: 1.1rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.2);     
 }
