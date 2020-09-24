@@ -23,6 +23,50 @@ body{
     line-height: 1.5;
 }
 
+//LOADING SPINNER
+.preloader{
+    background-color: #f2f2f2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    animation: turnoff 3s ease forwards;
+}
+
+@keyframes turnoff{
+    from{
+        visibility: visible;
+    }
+    to{
+        visibility: hidden;
+    }
+}
+.loading-title{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.loading-spinner{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid $violet;
+    border-top: 5px solid $rose;
+    border-bottom: 5px solid $rose;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}
 //HEADER
 header{
     height: 80px;
@@ -190,19 +234,21 @@ header{
             font-size: 1.1rem;
         }
         .fas.fa-heart{
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             background: -webkit-linear-gradient(bottom, $rose, $violet);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color:transparent;
             position: absolute;
-            right: 20px;
-            top: 22px;
+            right: 18px;
+            top: 20px;
             opacity: 0;
+            transition: opacity .3s ease-in-out;
             &:hover{
                 opacity: 1;
             }
         }
+
         .far.fa-heart{
             font-size: 1.5rem;
             opacity: 1;
@@ -320,11 +366,35 @@ footer{
         font-size: 1.8rem;
         font-family: 'Shrikhand', cursive;
     }
-    .fa-heart{
+    .coeur{
+        position: relative;
+        .far.fa-heart{
         font-size: 1.5rem;
         cursor: pointer;
+            &:hover{
+                opacity: 0;
+            }
+        }
+
+        .fas.fa-heart{
+        font-size: 1.7rem;
+        cursor: pointer;
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        background: -webkit-linear-gradient(bottom, $rose, $violet);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color:transparent;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+            &:hover{
+                opacity: 1;
+            }
+        }
     }
 }
+
 .entree{
     font-size: 1.3rem;
     font-weight: 400;
